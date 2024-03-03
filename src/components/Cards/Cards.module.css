@@ -70,3 +70,10 @@
 
   margin-bottom: -12px;
 }
+
+.lives{
+  display: flex;
+    margin-top: 50px;
+    color: #e5e5e5;
+    font-size: 50px;
+}
