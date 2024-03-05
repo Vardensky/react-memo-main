@@ -34,9 +34,11 @@
   gap: 26px;
   margin-top: 48px;
   margin-bottom: 28px;
+ 
 }
 
-.level {
+
+.level{
   display: flex;
   width: 97px;
   height: 98px;
@@ -46,7 +48,13 @@
 
   border-radius: 12px;
   background: #fff;
+ 
 }
+
+.active{
+  border: 1px solid maroon;
+}
+
 
 .levelLink {
   color: #0080c1;
@@ -61,4 +69,118 @@
 
 .levelLink:visited {
   color: #0080c1;
+}
+
+.label input{
+  appearance: none;
+ 
+}
+
+
+
+.label {
+  display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    align-items: center;
+    gap: 12px;
+    
+}
+ 
+
+.checkbox {
+  display: block;
+  height: 40px;
+  width: 40px;
+  background-color: #9fd9e2;
+  border: 1px solid maroon;
+  position: relative;
+
+}
+
+.inputMode:checked + .checkbox::after{
+content: "\2713";
+display: flex;
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+color: rgb(179, 1, 60);
+font-weight: 600;
+align-items: center;
+justify-content: center;
+font-size: 40px;
+}
+
+
+
+.numberGame {
+  display: flex;
+  align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: maroon;
+    
+}
+
+.buttonGame {
+  margin-top: 12px;
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #9fd9e2;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.buttonGame:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.buttonGame:active {
+  color: #000
+}
+
+.buttonGame:active:after {
+  background: transparent;
+}
+
+.buttonGame:hover:before {
+  opacity: 1;
+}
+
+.buttonGame:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #8ed1df;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
 }
